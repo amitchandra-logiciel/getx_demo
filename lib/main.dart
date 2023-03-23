@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:getx_demo/pages/home_page.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:getx_demo/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,10 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      getPages: Routes.routes,
+      initialRoute: Routes.initial,
     );
   }
 }

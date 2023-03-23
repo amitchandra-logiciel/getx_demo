@@ -1,7 +1,11 @@
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
-class Controller extends GetxController {
+class BaseController extends GetxController {
+  RxInt counter = 0.obs;
+  final name = 'amit mallah'.obs;
+  RxBool isAuthenticated = true.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -14,7 +18,6 @@ class Controller extends GetxController {
     super.onClose();
   }
 
-  final name = 'amit mallah'.obs;
-
   void changeName() => name.value = 'amitchandra mallah';
+  incrementCounter() => counter++;
 }

@@ -7,12 +7,12 @@ import 'package:getx_demo/models/counter.dart';
 
 void main() {
   late Counter counter;
-  late Controller controller;
+  late BaseController controller;
 
   group('Counter', () {
     setUp(() {
       counter = Counter();
-      controller = Controller();
+      controller = BaseController();
     });
 
     test('value should start at 0', () {
@@ -69,7 +69,7 @@ state of the reactive variable "name" across all of its lifecycles
       controller.changeName();
       expect(controller.name.value, 'amitchandra mallah');
 
-      Get.delete<Controller>();
+      Get.delete<BaseController>();
 
       expect(controller.name.value, '');
     });
